@@ -1,0 +1,18 @@
+---
+# tasks file for build
+- name: Ensure docker is installed
+  apt:
+    name: "{{ item }}" 
+    state: present
+  become: yes
+  with_items:
+    - docker.io
+
+- name: Build image from Dockerfile
+  docker_image:
+    name: webserver:v1.0
+    build:
+      source: build
+    state: present
+
+- name: Push image to dockerhub
