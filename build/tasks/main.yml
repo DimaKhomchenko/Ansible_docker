@@ -3,13 +3,13 @@
 - name: Copy Dockerfile
   copy: 
     src: Dockerfile 
-    dest: "{{ dest_folder }}/Dockerfile"
+    dest: "/home/{{ ansible_user_id }}"
 
 - name: Build image from Dockerfile
   docker_image:
     name: webserver
     tag: v0.1
     build:
-      path: /home/dockerfile/
+      path: "/home/{{ ansible_user_id }}"
     source: build
     state: present
