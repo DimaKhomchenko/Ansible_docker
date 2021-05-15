@@ -15,12 +15,13 @@
 - name: Ensure docker is installed
   apt:
     name: ['docker-ce', 'docker-ce-cli', 'containerd.io', 'python3-pip'] 
-    state: present
+    state: absent
   become: yes
 
 - name: Ensure docker-py is installed
   pip:
     name: docker-py
+    state: absent
   become: yes  
 
 - name: Add user to docker group
