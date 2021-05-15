@@ -23,4 +23,5 @@
 - name: Add user to docker group
   user:
     name: "{{ansible_user_id}}"
-    group: docker
+    groups: docker
+    state: present
