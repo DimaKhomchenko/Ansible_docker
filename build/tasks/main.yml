@@ -1,10 +1,15 @@
 ---
 # tasks file for build
+- name: Copy Dockerfile
+  copy: 
+    src: Dockerfile 
+    dest: /home/Dockerfile
+
 - name: Build image from Dockerfile
   docker_image:
     name: webserver
     tag: v0.1
     build:
-      path: ./
+      path: /home
     source: build
     state: present
