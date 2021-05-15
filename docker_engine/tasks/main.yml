@@ -1,10 +1,10 @@
 ---
 # tasks file for docker_engine
 - name: Ensure docker key is installed
-  apt-key:
+  apt_key:
     url: https://download.docker.com/linux/ubuntu/gpg
     state: present
-    
+
 - name: Docker repo
   apt_repository:
     repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable
