@@ -1,6 +1,7 @@
 ---
 # tasks file for docker_engine
 - name: Ensure docker key is installed
+  become: yes
   apt_key:
     url: https://download.docker.com/linux/ubuntu/gpg
     state: present
@@ -9,6 +10,7 @@
   apt_repository:
     repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable
     state: present
+  become: yes
 
 - name: Ensure docker is installed
   apt:
@@ -19,9 +21,11 @@
 - name: Ensure docker-py is installed
   pip:
     name: docker-py
+  become: yes  
 
 - name: Add user to docker group
   user:
     name: ubuntu
     groups: docker
     state: present
+  become: yes

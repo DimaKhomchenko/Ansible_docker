@@ -13,3 +13,5 @@
       path: "/home/{{ ansible_user_id }}"
     source: build
     state: present
+    repository: 13.48.106.84:5000/test
+    push: yes
