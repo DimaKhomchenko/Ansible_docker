@@ -2,7 +2,9 @@
 # tasks file for build
 - name: Build image from Dockerfile
   docker_image:
-    name: webserver:v1.0
+    name: webserver
+    tag: v0.1
     build:
-      source: build
+      path: ./
+    source: build
     state: present
