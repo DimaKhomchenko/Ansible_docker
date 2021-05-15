@@ -2,4 +2,4 @@
 # tasks file for webserver
 - name: pull an image
   docker_image:
-    name: 13.48.106.84:5000/test:v0.1
+    name: 13.48.106.84:8081/webserver:v0.1
