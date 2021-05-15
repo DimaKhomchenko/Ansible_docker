@@ -3,13 +3,13 @@
 - name: Copy Dockerfile
   copy: 
     src: Dockerfile 
-    dest: /home/dockerfile/Dockerfile
+    dest: {{ dest_folder }}/Dockerfile
 
 - name: Build image from Dockerfile
   docker_image:
     name: webserver
     tag: v0.1
     build:
-      path: /home/dockerfile
+      path: /home/dockerfile/
     source: build
     state: present
