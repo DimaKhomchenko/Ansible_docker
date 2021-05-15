@@ -3,7 +3,7 @@
 - name: Copy Dockerfile
   copy: 
     src: Dockerfile 
-    dest: {{ dest_folder }}/Dockerfile
+    dest: "{{ dest_folder }}/Dockerfile"
 
 - name: Build image from Dockerfile
   docker_image:
