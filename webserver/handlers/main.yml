@@ -1,10 +1,10 @@
 ---
 # handlers file for webserver
 - name: container running
-    docker_container:
-      name: myapplication
-      image: 13.48.106.84:5000/webserver:v0.1
-      state: started
-      restart: yes
-      ports:
-        - "8080:8080"
+  docker_container:
+    name: myapplication
+    image: 13.48.106.84:5000/webserver:v0.1
+    state: started
+    restart: yes
+    ports:
+      - "8080:8080"
