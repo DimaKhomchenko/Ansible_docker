@@ -6,3 +6,7 @@
 - hosts: build
   roles:
     - build
+
+- hosts: prod
+  roles:
+    - webserver
