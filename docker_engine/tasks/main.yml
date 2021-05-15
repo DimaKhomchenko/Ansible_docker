@@ -1,0 +1,21 @@
+---
+# tasks file for docker_engine
+- name: Ensure docker key is installed
+  apt-key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+    
+- name: Docker repo
+  apt_repository:
+    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable
+    state: present
+
+- name: Ensure docker is installed
+  apt:
+    name: "{{ item }}" 
+    state: present
+  become: yes
+  with_items:
+    - docker-ce
+    - docker-ce-cli
+    - containerd.io
