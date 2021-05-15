@@ -12,14 +12,14 @@
 
 - name: Ensure docker is installed
   apt:
-    name: "{{ item }}" 
+    name: ['docker-ce', 'docker-ce-cli', 'containerd.io', 'python-pip'] 
     state: present
   become: yes
-  with_items:
-    - docker-ce
-    - docker-ce-cli
-    - containerd.io
 
+- name: Ensure docker-py is installed
+  pip:
+    name: docker-py
+    
 - name: Add user to docker group
   user:
     name: "{{ansible_user_id}}"
