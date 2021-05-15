@@ -3,3 +3,6 @@
 - name: pull an image
   docker_image:
     name: 13.48.106.84:5000/webserver:v0.1
+  
+  notify:
+    - container running
