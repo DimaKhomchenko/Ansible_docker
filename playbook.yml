@@ -3,3 +3,7 @@
   become: yes
   roles: 
     - docker_engine
+
+- hosts: build
+  roles:
+    - build
